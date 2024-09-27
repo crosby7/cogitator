@@ -1,9 +1,30 @@
-import { Stack } from "expo-router";
+import { useFonts } from "expo-font";
+import { Drawer } from "expo-router/drawer";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-export default function RootLayout() {
+export default function DrawerLayout() {
+  useFonts({
+    "requiem": require('./../assets/fonts/Requiem.ttf')
+  });
+
   return (
-    <Stack>
-      <Stack.Screen name="index" />
-    </Stack>
+    <GestureHandlerRootView>
+      <Drawer>
+        <Drawer.Screen
+          name="index"
+          options={{
+            drawerLabel: "Home",
+            headerTitle: "Home"
+          }}
+        />
+        <Drawer.Screen
+          name="pages/profile"
+          options={{
+            drawerLabel: "My Account",
+            headerTitle: "My Account"
+          }}
+        />
+      </Drawer>
+    </GestureHandlerRootView>
   );
 }
