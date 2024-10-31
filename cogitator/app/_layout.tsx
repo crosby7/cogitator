@@ -48,6 +48,20 @@ export default function DrawerLayout() {
             headerTitle: "My Account"
           }}
         />
+        <Drawer.Screen
+          name="pages/generator/characterGenerator"
+          options={{
+            drawerLabel: "Make New Character",
+            headerTitle: "Character Generator"
+          }}
+        />
+        <Drawer.Screen
+          name="pages/generator/patronGenerator"
+          options={{
+            drawerLabel: "Make New Patron",
+            headerTitle: "Patron Generator"
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );
